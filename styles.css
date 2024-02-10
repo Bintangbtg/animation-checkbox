@@ -1,0 +1,16 @@
+/* Mengubah radio button menjadi kotak */
+input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px; /* Lebar kotak */
+    height: 20px; /* Tinggi kotak */
+    border: 1px solid #999; /* Warna border */
+    border-radius: 3px; /* Sudut border */
+    outline: none;
+}
+
+/* Mengatur tampilan kotak saat dipilih */
+input[type="radio"]:checked {
+    background-color: #007bff; /* Warna latar belakang saat dipilih */
+}

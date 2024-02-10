@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deret Kotak</title>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const container = document.getElementById('container');
+      const numCols = 44;
+      const numRows = 12;
+  
+      for (let i = 0; i < numRows; i++) {
+        for (let j = 0; j < numCols; j++) {
+          const radio = document.createElement('input');
+          radio.type = 'radio';
+          container.appendChild(radio);
+        }
+        container.appendChild(document.createElement('br'));
+      }
+    });
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container" id="container" style="text-align: center;"></div>
+
+</body>
+</html>
