@@ -9,7 +9,19 @@
       const container = document.getElementById('container');
       const numCols = 44;
       const numRows = 12;
-  
+      const interval = 10; // Interval waktu antara mencentang kotak (dalam milidetik)
+      let currentRadio = 1; // Mulai dari kotak pertama
+
+      function animateRadios() {
+        if (currentRadio > numCols * numRows) return; // Stop setelah kotak ke-44
+        const radios = container.querySelectorAll('input[type="radio"]');
+        if (![93,94,95,98,99,100,101,102,103,104,108,109,110,111,112,113,117,118,119,120,121,123,124,125,126,127,128,137,140,145,152,161,165,172,181,184,189,196,205,209,216,225,228,233,240,249,253,260,269,271,277,284,286,287,288,293,294,295,296,297,304,313,316,321,328,333,337,341,348,357,360,365,372,377,381,385,392,401,404,409,416,421,421,429,436,445,446,447,453,460,461,462,463,463,464,465,469,470,471,472,480,425,473,289].includes(currentRadio)) { // Melewati kotak di kolom 5 dan kolom 40 pada baris pertama dan baris ke-12
+          radios[currentRadio - 1].checked = true;
+        }
+        currentRadio++;
+        setTimeout(animateRadios, interval);
+      }
+
       for (let i = 0; i < numRows; i++) {
         for (let j = 0; j < numCols; j++) {
           const radio = document.createElement('input');
@@ -18,9 +30,11 @@
         }
         container.appendChild(document.createElement('br'));
       }
+
+      animateRadios();
     });
-  </script>
-  <link rel="stylesheet" href="styles.css">
+</script>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
